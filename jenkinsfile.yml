@@ -11,7 +11,7 @@ pipeline {
 
     stage('Checkout Source') {
       steps {
-        git 'https://github.com/DR-Rise/vuejs-beginner.git'
+        checkout([$class: 'GitSCM', branches: [[name: '**']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/DR-Rise/vuejs-beginner.git']]])
       }
     }
 
